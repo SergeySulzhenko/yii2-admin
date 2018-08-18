@@ -138,7 +138,7 @@ class Configs extends \yii\base\BaseObject
         if (self::$_instance === null) {
             $type = ArrayHelper::getValue(Yii::$app->params, 'mdm.admin.configs', []);
             if (is_array($type) && !isset($type['class'])) {
-                $type['class'] = static::className();
+                $type['class'] = static::class;
             }
 
             return self::$_instance = Yii::createObject($type);
