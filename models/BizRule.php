@@ -156,4 +156,13 @@ class BizRule extends \yii\base\Model
     {
         return $this->_item;
     }
+
+    public static function getDb()
+    {
+        if (Configs::instance()->db !== null) {
+            return Configs::instance()->db;
+        } else {
+            return Yii::$app->getDb();
+        }
+    }
 }

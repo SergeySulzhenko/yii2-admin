@@ -294,4 +294,14 @@ class AuthItem extends Model
 
         return $result[$type];
     }
+
+    public static function getDb()
+    {
+        if (Configs::instance()->db !== null) {
+            return Configs::instance()->db;
+        } else {
+            return Yii::$app->getDb();
+        }
+    }
+
 }
