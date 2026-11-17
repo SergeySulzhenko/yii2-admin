@@ -33,10 +33,10 @@ class DbManager extends \yii\rbac\DbManager
      */
     public function getAssignments($userId)
     {
-        if (!isset($this->_assignments[$userId])) {
-            $this->_assignments[$userId] = parent::getAssignments($userId);
+        if (!isset($this->_assignments[$userId??0])) {
+            $this->_assignments[$userId??0] = parent::getAssignments($userId);
         }
-        return $this->_assignments[$userId];
+        return $this->_assignments[$userId??0];
     }
 
     /**
